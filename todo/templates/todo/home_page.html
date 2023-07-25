@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home page</title>
+</head>
+<body>
+<header style="width: 100%; background-color: bisque; border: black  solid">
+    <div style="width: 50%; position: center; padding-left: 35% ;">
+        <h1>Welcome to my TO DO LIST site</h1>
+    </div>
+</header>
+<div style="background-color: burlywood; width: 30%">
+    {% comment %}{% if user.is_authenticated %}{% endcomment %}
+    <a href="#" style="padding-left: 20px">logout</a>
+   {% comment %} {% else %}{% endcomment %}
+        <a href="#" style="padding-left: 20px">login</a>
+          <p style="padding-left: 20px">Dont have a account? <a href="#">register now</a></p>
+   {% comment %} {% endif %}{% endcomment %}
+
+</div>
+<hr>
+<a href="#"><h3>To your TODOList</h3></a>
+
+</body>
+</html>
