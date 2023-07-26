@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+{% block content %}
+    {% if user.is_authenticated %}
+<h1>Task list of {{ request.user }}</h1>
+        {% else %}
+
+    {% endif %}
+<div>
+    <table>
+
+    <tr>
+        <th>tasks</th>
+        <th></th>
+    </tr>
+        {% if tasks %}
+        {% for task in tasks %}
+    <tr>
+        <td><a href="{% url 'taskdetail' task.id %}">{{ task.title }}</a></td>
+        <td><a href="{% url 'taskupdate' task.id %}">Edit this task</a></td>
+        <td><a href="{% url 'taskdelete' task.id %}"> delete</a></td>
+    </tr>
+
+        {% endfor %}
+        {% else %}
+            <tr>
+                <td>no task to do </td>
+            </tr>
+        {% endif %}
+    </table>
+</div>
+<hr>
+<div><h3><a href="{% url 'taskcreate' %}">add a task</a></h3></div>
+{% endblock content %}
+</body>
+</html>

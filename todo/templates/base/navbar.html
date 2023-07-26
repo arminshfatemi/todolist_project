@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+</head>
+<body>
+    <header style="border-bottom: black thick solid">
+
+        <a style="border-right: black thin solid" href="{% url 'home' %}">Home</a>
+
+        {% if user.is_authenticated %}
+            <a style="border-right: black thin solid" href="{% url 'tasklist' %}">Task list</a>
+            <a style="border-right: black thin solid" href="{% url 'logout' %}"> logout</a>
+        {% else %}
+            <a style="border-right: black thin solid" href="{% url 'login' %}"> login</a>
+            <a style="border-right: black thin solid" href="{% url 'register' %}"> register</a>
+        {% endif %}
+
+    </header>
+
+</body>
+</html>
